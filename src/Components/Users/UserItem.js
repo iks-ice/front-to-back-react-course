@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom'
 
 
-const UserItem = ({user: {avatar_url, login, html_url}}) => {
+
+const Useritem = ({user: {avatar_url, login}}) => {
     return (
         <div className='card text-center'>
             <img src={avatar_url}
@@ -10,13 +12,15 @@ const UserItem = ({user: {avatar_url, login, html_url}}) => {
                 className="round-img"
                 style={{width: '60px'}} />
             <h3>{login}</h3>
-            <div><a href={html_url} className="btn btn-dark btn-sm my-1">More</a></div>
+            <div>
+                <Link to={`/users/${login}`} className="btn btn-dark btn-sm my-1">More</Link>
+            </div>
         </div>
     )
 }
 
-UserItem.propTypes = {
+Useritem.propTypes = {
     user: PropTypes.object.isRequired,
 }
 
-export default UserItem
+export default Useritem
