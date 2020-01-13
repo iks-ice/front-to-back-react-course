@@ -11,7 +11,8 @@ const User = ({getUser, getUserRepos, match: {params: {login}}, loading, user, r
     useEffect(() => {
         getUser(login);
         getUserRepos(login);
-    }, [getUser, getUserRepos, login]);
+        // eslint-disable-next-line
+    }, []);
     const {
         name,
         avatar_url,

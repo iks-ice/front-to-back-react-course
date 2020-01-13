@@ -9,10 +9,6 @@ import User from './Components/Users/User';
 import Search from './Components/Users/Search';
 import Alert from './Components/Layout/Alert';
 
-
-
-
-
 class App extends Component {
 	state = {
 		users: [],
